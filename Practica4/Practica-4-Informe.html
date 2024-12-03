@@ -7522,6 +7522,7 @@ a.anchor-link {
 <li><strong>Fecha:</strong> 13 de Noviembre del 2024</li>
 </ul>
 <h2 id="Introducci%C3%B3n">Introducción<a class="anchor-link" href="#Introducci%C3%B3n">¶</a></h2><p>En este trabajo se busca realizar un modelo de aprendizaje supervisado utilizando redes neuronales multicapas para aprender la función XOR, problema de paridad (generalización del XOR) y el mapeo logistico.</p>
+<p>El codigo fuente del trabajo se puede encontrar en el siguiente <a href="https://github.com/LeanoA/neural_network_ib/blob/600066300d8e595949c79a01ca56d8521e3a1041/Practica4/Practica-4.ipynb">notebook-github</a>.</p>
 </div>
 </div>
 </div>
@@ -7587,7 +7588,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>De este grafico se puede observar que la arquitectura 2 converge más rapido que la arquitectura 1 para los 10 casos iniciales de las conexiones analizados. Se puede observar tambien que la arquitectura 1 tiene minimos locales que tardan en salir de ellos. Se puede obervar que el la arquitectura 1 aun mantiene un error cuadratico medio mayor que la arquitectura 2 despues de 2000 iteraciones producto de un minimo local que aun no convergio.</p>
-<p>Los tiempos de convergencia medios parecen ser similares, sin embargo, la arquitectura 2 muestra un mejor tiempo de convergencia para algunos casos.</p>
+<p>Los tiempos de convergencia medios parecen ser similares, sin embargo, la arquitectura 2 muestra un mejor tiempo de convergencia para algunos casos lo que se refleja en el promedio.</p>
 </div>
 </div>
 </div>
@@ -7621,9 +7622,9 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <!-- Image centered with reference and figure #-->
-<center><img alt="Arquitectura XOR generalizado" src="Ejercicio1-Arquitectura.png" title="Arquitectura XOR generalizado" width="400"/></center>
+<center><img alt="Arquitectura XOR generalizado" src="Ejercicio2-Arquitectura.png" title="Arquitectura XOR generalizado" width="200"/></center>
 <p style="text-align: center">
-<b>Figure 3:</b> Arquitecturas XOR para xor generalizado. Se resuelve para un número de entradas N=5 y un numero de neuronas ocultas de N'= 1, 3, 5, 7, 9, 11.
+<b>Figure 3:</b> Arquitecturas XOR generalizado. Se resuelve para un número de entradas N=5 y un numero de neuronas ocultas de N'= 1, 3, 5, 7, 9, 11.
 </p>
 </div>
 </div>
@@ -7648,7 +7649,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <!-- Image centered with reference and figure #-->
-<center><img alt="Arquitectura XOR generalizado" src="Ejercicio2-PartB.png" title="Arquitectura XOR generalizado" width="700"/></center>
+<center><img alt="Arquitectura XOR generalizado" src="Ejercicio2-PartC.png" title="Arquitectura XOR generalizado" width="700"/></center>
 <p style="text-align: center">
 <b>Figure 4:</b> Error cuadrático medio en función de numero de iteración para arquitectura XOR generalizado. Se resuelve para un número de entradas N=5 y un numero de neuronas ocultas de N'= 1, 3, 5, 7, 9, 11.
 </p>
@@ -7662,7 +7663,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Se puede observar que cuando el numero de neuronas en la capa oculta es igual al numero de entradas la red aprende la tarea de forma satisfactoria. Se puede ver que para los casos donde el numero de neuronas en la capa oculta es mayor al numero de entradas la red aprende la tarea pero toma mas iteraciones. Habría esperado que para un numero menor en la capa oculta no se pudiera aprender la tarea ya que podrían no alcanzar los grados de libertad para ajustar la curva de separación, sin embargo, se puede observar que el error cuadratico medio converge a cero muy rápido.</p>
+<p>Se puede observar que cuando el numero de neuronas en la capa oculta iguala al numero de entradas la red aprende la tarea de forma satisfactoria.
+En contraste, un numero menor de neuronas en la capa oculta que neuronas de entrada, no permite aprender la tarea ya que no alcanzan los grados de libertad para ajustar la curva de separación. Vemos como en el caso de 1 y 3 neuronas en la capa oculta mantienen un error cuadratico medio alto luego de haber llegado a un mínimo despues de aproximadamente 1.000 iteraciones y el mismo se mantiene constante.</p>
+<p>Observamos, tambien, que en los casos donde el numero de neuronas en la capa oculta es mayor al número de entradas la red aprende la tarea pero esto requiere significativamente mas iteraciones.</p>
 </div>
 </div>
 </div>
@@ -7708,6 +7711,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>El modelo se implementó utilizando la libreria de python <code>tensorflow</code> y la arquitectura del modelo se muestra en la <strong>Figura 6</strong>.</p>
 </div>
 </div>
 </div>
@@ -7721,7 +7725,7 @@ a.anchor-link {
 <!-- Image centered with reference and figure #-->
 <center><img alt="Arquitectura XOR generalizado" src="Ejercicio3-model.png" title="Arquitectura XOR generalizado" width="700"/></center>
 <p style="text-align: center">
-<b>Figure 4:</b> Arquitectura de la red propuesta utilizando TF.
+<b>Figure 6:</b> Arquitectura de la red propuesta utilizando la libreria de python <i>tensorflow</i>.
 </p>
 </div>
 </div>
@@ -7733,6 +7737,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Para entrenar el modelo se utilizó el 80% de los datos generados y se testeo con el 20% restante. Se entreno por 1500 epocas y se utilizó un tamaño de batch de 4.
+Los resultados obtenidos se muestran en la <strong>Figura 7</strong>.</p>
 </div>
 </div>
 </div>
@@ -7746,22 +7752,21 @@ a.anchor-link {
 <!-- Image centered with reference and figure #-->
 <center><img alt="Logistic Regresion MSE" src="Ejercicio3-error.png" title="Logistic Regresion MSE " width="700"/></center>
 <p style="text-align: center">
-<b>Figure 4:</b> Error cuadrático medio en función del numero de iteraciones para 5, 10 y 100 ejemplos utilizando el 80% para entrenamiento y el 20% para testeo.
+<b>Figure 7:</b> Error cuadrático medio en función del numero de iteraciones para 5, 10 y 100 ejemplos utilizando el 80% para entrenamiento y el 20% para testeo.
 </p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>De la <strong>Figura 7</strong> se puede observar que en todos los casos pareciera aprender. Tambien vemos que el error disminuye rapidamente en las primeras iteraciones y luego se mantiene practicamente constante. El caso de 10 y 100 ejemplos tienen un comportamiento similar pero el error es menor en el caso de 100 ejemplos. Con respecto al error de generalización el error es menor para el caso de 100 ejemplos indicando que el modelo generaliza mejor con mas datos.
+El caso de 5 ejemplos es un caso especial ya que debido a la poca cantidad de datos el error de generalización es mayor que el error de entrenamiento.</p>
+<p>Una vez entrenado el modelo se puede comparar los valores predichos con los valores reales. En la <strong>Figura 8</strong> se muestra la comparación entre los valores reales y los valores predichos para los distintos casos. Se muestra ademas, los datos de entrenamiento y testeo.</p>
 </div>
 </div>
 </div>
@@ -7775,7 +7780,7 @@ a.anchor-link {
 <!-- Image centered with reference and figure #-->
 <center><img alt="Prediccion de la regresion logistica" src="Ejercicio3.png" title="Prediccion de la regresion logistica" width="700"/></center>
 <p style="text-align: center">
-<b>Figure 4:</b> Prediccion de la regresión logistica .
+<b>Figure 8:</b> Comparación de la prediccion de la regresión logistica para los distintos casos de 5, 10 y 100 ejemplos con la curva real del mapeo logistico.
 </p>
 </div>
 </div>
@@ -7787,6 +7792,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Al comparar los distintos modelos con la curva real del mapeo logistico vemos que el error tiende a cero por que se logra ajustar la curva con los ejemplos de entrenamiento. Sin embargo al generalizar el error aumenta. El error de generalización disminuye a medida que aumenta el numero de ejemplos utilizados para entrenar el modelo. Como caso extreme vemos el modelo para 5 ejemplos que al utilizar el 80% para entrenamiento significo solo utilizar 4 ejemples para entrenar. Dependiendo de que tan distribuidos esten los ejemplos en el espacio de entrada el modelo puede generalizar mejor o peor. Al tener mas ejemplos, hay una mayor probabilidad de que se hayen mejor distribuidos y el modelo generalice mejor.</p>
 </div>
 </div>
 </div>
